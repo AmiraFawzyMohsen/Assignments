@@ -9,5 +9,5 @@ public:
 
 int main() {
 	Node* first = new Node();
-		first->data = 'A';
+	first->data = 'A';
 }
