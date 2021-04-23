@@ -1,23 +1,30 @@
-}
-            }
+import java.util.*;
+public class Test{
+public static void main(String[] args) {
+		// Create a Scanner
+		Scanner input = new Scanner(System.in);
 
-        }
-    } 
-    catch (FileNotFoundException ex) 
-    {
-        ex.printStackTrace();
-    }
+		// Invoke getArray method
+		int[] array = getArray();
 
-    for (int i = 0; i < letterCount.length; i++) 
-    {
-        System.out.println((char)(i + 'A') + " occurrence = " + letterCount[i]);
-    }
+		// Prompt the user to enter the index of the array
+		System.out.print("Enter the index of the array: ");
+		try {
+			// Display the corresponding element value
+			System.out.println("The corresponding element value is " + 
+				array[input.nextInt()]);
+		}
+		catch (ArrayIndexOutOfBoundsException ex) {
+			System.out.println("Out of Bounds.");
+		}
+	}
 
-}
-
-private static boolean isLetter(char ch) 
-{
-
-    return (ch >= 'A' && ch <= 'Z');
-}
+	/** Returns an array with 100 randomly chosen integers */
+	public static int[] getArray() {
+		int[] array = new int[100];
+		for (int i = 0; i < array.length; i++) {
+			array[i] = (int)(Math.random() * 100) + 1;
+		}
+		return array;
+	}
 }
