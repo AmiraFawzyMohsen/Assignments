@@ -1,23 +1,23 @@
-#include <iostream> 
-using namespace std;
-void permute(string a, int l, int r)
-{
-    if (l == r)
-        cout << a << endl;
-    else
-    { 
-        for (int i = l; i <= r; i++)
-        {  
-            swap(a[l], a[i]);
-            permute(a, l + 1, r);
-            swap(a[l], a[i]);
-        }
-    }
 }
-int main()
+            }
+
+        }
+    } 
+    catch (FileNotFoundException ex) 
+    {
+        ex.printStackTrace();
+    }
+
+    for (int i = 0; i < letterCount.length; i++) 
+    {
+        System.out.println((char)(i + 'A') + " occurrence = " + letterCount[i]);
+    }
+
+}
+
+private static boolean isLetter(char ch) 
 {
-    string str = "ABC";
-    int n = str.size();
-    permute(str, 0, n - 1);
-    return 0;
+
+    return (ch >= 'A' && ch <= 'Z');
+}
 }
